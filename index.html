@@ -302,9 +302,7 @@ const segundos = Math.floor(
 1000
 );
 
-document.getElementById("contador").innerHTML =
-`${dias} dias ${horas}h ${minutos}m ${segundos}s`;
-
+document.getElementById("contador").innerHTML = dias + " dias " + horas + "h " + minutos + "m " + segundos + "s";
 }
 
 setInterval(atualizarContador,1000);
