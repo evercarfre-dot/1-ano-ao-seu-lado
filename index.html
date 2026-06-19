@@ -53,10 +53,18 @@ line-height:1.7;
 }
 
 .counter{
-font-size:1.8rem;
+font-size:1.5rem;
 font-weight:bold;
-color:#e63946;
+line-height:2;
 margin-top:20px;
+color:#e63946;
+background:white;
+padding:20px;
+border-radius:20px;
+max-width:300px;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 3px 15px rgba(0,0,0,.1);
 }
 
 .gallery{
@@ -302,7 +310,11 @@ const segundos = Math.floor(
 1000
 );
 
-document.getElementById("contador").innerHTML = dias + " dias " + horas + "h " + minutos + "m " + segundos + "s";
+document.getElementById("contador").innerHTML =
+"❤️ " + dias + " dias<br>" +
+"🕒 " + horas + " horas<br>" +
+"⏱️ " + minutos + " minutos<br>" +
+"✨ " + segundos + " segundos";
 }
 
 setInterval(atualizarContador,1000);
@@ -318,6 +330,35 @@ window.addEventListener('load', () => {
         console.log("Autoplay bloqueado pelo navegador.");
     });
 });
+</script>
+    <script>
+function criarCoracao() {
+    const coracao = document.createElement("div");
+
+    coracao.innerHTML = "❤️";
+    coracao.style.position = "fixed";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.top = "-20px";
+    coracao.style.fontSize = (20 + Math.random() * 20) + "px";
+    coracao.style.pointerEvents = "none";
+    coracao.style.zIndex = "9999";
+
+    document.body.appendChild(coracao);
+
+    let pos = -20;
+
+    const queda = setInterval(() => {
+        pos += 3;
+        coracao.style.top = pos + "px";
+
+        if (pos > window.innerHeight) {
+            clearInterval(queda);
+            coracao.remove();
+        }
+    }, 30);
+}
+
+setInterval(criarCoracao, 500);
 </script>
 </body>
 </html>
