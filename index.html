@@ -125,7 +125,7 @@ transform:scale(1.15);
 Desde 21/06/2025
 </p>
 
-<img src="capa.jpg" class="cover">
+<img src="capa.jpeg" class="cover">
 
 </header>
 
@@ -155,13 +155,16 @@ Eu te amo ❤️
 
 <h2>🎵 Nossa Música</h2>
 
-<a class="spotify-btn"
-href="https://open.spotify.com/track/6vARbzVXg90V8fYmgks5u3"
-target="_blank">
+<p>Tocando nossa música ❤️</p>
 
-Ouvir Minha Felicidade 🎵
+<audio id="musica" autoplay loop>
+    <source src="audio_convertido.mp3" type="audio/mpeg">
+</audio>
 
-</a>
+<button onclick="document.getElementById('musica').play()"
+class="spotify-btn">
+▶️ Tocar Música
+</button>
 
 </section>
 
@@ -172,62 +175,62 @@ Ouvir Minha Felicidade 🎵
 <div class="gallery">
 
 <div class="photo-card">
-<img src="foto1.jpg">
+<img src="foto1.jpeg">
 <p>O início de uma história que mudou minha vida. ❤️</p>
 </div>
 
 <div class="photo-card">
-<img src="foto2.jpg">
+<img src="foto2.jpeg">
 <p>Momentos simples que se tornaram inesquecíveis.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto3.jpg">
+<img src="foto3.jpeg">
 <p>Cada sorriso ao teu lado valeu a pena.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto4.jpg">
+<img src="foto4.jpeg">
 <p>Construindo memórias juntos.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto5.jpg">
+<img src="foto5.jpeg">
 <p>Mais um capítulo da nossa história.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto6.jpg">
+<img src="foto6.jpeg">
 <p>Te amar se tornou a melhor parte dos meus dias.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto7.jpg">
+<img src="foto7.jpeg">
 <p>Obrigado por cada momento vivido.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto8.jpg">
+<img src="foto8.jpeg">
 <p>Meu lugar favorito sempre será ao teu lado.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto9.jpg">
+<img src="foto9.jpeg">
 <p>Cada foto guarda uma lembrança especial.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto10.jpg">
+<img src="foto10.jpeg">
 <p>Vivendo sonhos juntos.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto11.jpg">
+<img src="foto11.jpeg">
 <p>Mais uma memória para guardar no coração.</p>
 </div>
 
 <div class="photo-card">
-<img src="foto12.jpg">
+<img src="foto12.jpeg">
 <p>E que este seja apenas o começo. ❤️</p>
 </div>
 
@@ -309,6 +312,14 @@ setInterval(atualizarContador,1000);
 atualizarContador();
 
 </script>
+<script>
+window.addEventListener('load', () => {
+    const musica = document.getElementById('musica');
 
+    musica.play().catch(() => {
+        console.log("Autoplay bloqueado pelo navegador.");
+    });
+});
+</script>
 </body>
 </html>
